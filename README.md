@@ -2,9 +2,13 @@
 
 Continuous spatial positioning confidence scoring for [Curio Trekker](https://curiobioscience.com/) / Slide-Tags spatial transcriptomics data.
 
+![Graphical Abstract](figures/graphical_abstract.png)
+
 ## What this does
 
-The Curio Trekker pipeline classifies cells as "confidently positioned" (1 DBSCAN cluster), "ambiguous" (2+ clusters), or "unpositioned" (0 clusters). This tool computes a **continuous confidence score (0-1)** for each cell, enabling quality-based filtering that dramatically improves spatial analysis.
+The Curio Trekker pipeline classifies cells as "confidently positioned" (1 DBSCAN cluster), "ambiguous" (2+ clusters), or "unpositioned" (0 clusters). However, >99% of each cell's spatial barcodes are ambient contamination, and the binary classification hides substantial variation in positioning quality.
+
+This tool computes a **continuous confidence score (0-1)** for each cell based on five signal quality metrics from the DBSCAN spatial cluster. Filtering for high-confidence cells reveals anatomically coherent spatial patterns that are invisible in the unfiltered data.
 
 **Key result**: Filtering to score >= 0.5 produces **3-8x improvement** in spatial clustering metrics for hippocampal cell types (DG granule, CA1, CA3 pyramidal cells).
 
