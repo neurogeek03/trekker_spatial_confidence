@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Data files (too large for git)
+data/
+*.h5ad
+*.h5
+*.txt
+*.csv
+!requirements.txt
+
+# Keep figures in git (they're part of the report)
+!figures/*.png
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
