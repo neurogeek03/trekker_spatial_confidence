@@ -153,9 +153,10 @@ def generate_dcx_dg(sample_dfs, fig_dir, dcx_dir='results'):
                     ax.scatter(cells['x_um'], cells['y_um'], **kwargs)
 
             setup_spatial_axes(ax)
+            _dcxm = "DG DCX−"
             add_cell_count_label(ax,
                 f'{n_all:,} cells\nDCX+: {counts.get("DG DCX+",0)}  '
-                f'DCX\u2212: {counts.get("DG DCX\u2212",0)}')
+                f'DCX−: {counts.get(_dcxm, 0)}')
 
             if row == 0:
                 t = 'No filter' if thresh == 0.0 else f'Score ≥ {thresh}'
